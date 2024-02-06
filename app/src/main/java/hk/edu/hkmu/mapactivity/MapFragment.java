@@ -68,7 +68,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_map, container, false);
 
-        // Find the distance buttons
+
         button100m = view.findViewById(R.id.button100m);
         button500m = view.findViewById(R.id.button500m);
         button1km = view.findViewById(R.id.button1km);
@@ -114,6 +114,34 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         return view;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        button100m = view.findViewById(R.id.button100m);
+        button500m = view.findViewById(R.id.button500m);
+        button1km = view.findViewById(R.id.button1km);
+        button2km = view.findViewById(R.id.button2km);
+
+        View.OnClickListener distanceClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onDistanceButtonClick(v);
+            }
+        };
+
+        button100m.setOnClickListener(distanceClickListener);
+        button500m.setOnClickListener(distanceClickListener);
+        button1km.setOnClickListener(distanceClickListener);
+        button2km.setOnClickListener(distanceClickListener);
+
+        button2km.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onDistanceButtonClick(v);
+            }
+        });
+    }
 
     public void onDistanceButtonClick(View view) {
         int clickedButtonId = view.getId();
@@ -141,6 +169,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         updateDistanceButtonColors();
     }
 
+
     private LatLngBounds computeBounds(float distance) {
         LatLng currentLocation = googleMap.getCameraPosition().target;
         double latitude = currentLocation.latitude;
@@ -151,6 +180,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         LatLng southwest = new LatLng(latitude - latOffset, longitude - lonOffset);
         return new LatLngBounds(southwest, northeast);
     }
+
 
     private void updateDistanceButtonColors() {
         button100m.setBackgroundColor(

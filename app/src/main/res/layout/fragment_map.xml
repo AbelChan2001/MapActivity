@@ -27,43 +27,48 @@
 
         <Button
             android:id="@+id/button100m"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="100m"
             android:background="@drawable/button_selector"
             android:onClick="onDistanceButtonClick" />
+
         <Space
             android:layout_width="2dp"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp" />
 
         <Button
             android:id="@+id/button500m"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="500m"
             android:background="@drawable/button_selector"
             android:onClick="onDistanceButtonClick" />
 
         <Space
             android:layout_width="2dp"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp" />
 
         <Button
             android:id="@+id/button1km"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="1km"
             android:background="@drawable/button_selector"
             android:onClick="onDistanceButtonClick" />
 
         <Space
             android:layout_width="2dp"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp" />
 
         <Button
             android:id="@+id/button2km"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="2km"
             android:background="@drawable/button_selector"
             android:onClick="onDistanceButtonClick" />
