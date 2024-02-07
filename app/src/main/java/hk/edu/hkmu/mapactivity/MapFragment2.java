@@ -107,8 +107,8 @@ public class MapFragment2 extends Fragment implements OnMapReadyCallback {
             }
         });
 
-        // Disable the default zoom controls
-        googleMap.getUiSettings().setZoomControlsEnabled(false);
+        // Disable the default two button
+        googleMap.getUiSettings().setMapToolbarEnabled(false);
 
         // Add multiple locations using LatLng (latitude, longitude)
         addLocationToMap(22.301115, 114.171868, "Mira Place");

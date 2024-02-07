@@ -169,7 +169,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         updateDistanceButtonColors();
     }
 
-
     private LatLngBounds computeBounds(float distance) {
         LatLng currentLocation = googleMap.getCameraPosition().target;
         double latitude = currentLocation.latitude;
@@ -205,8 +204,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             }
         });
 
-        // Disable the default zoom controls
-        googleMap.getUiSettings().setZoomControlsEnabled(false);
+        // Disable the default two button
+        googleMap.getUiSettings().setMapToolbarEnabled(false);
 
         // Add multiple locations using LatLng (latitude, longitude)
         addLocationToMap(22.301115, 114.171868, "Mira Place");
